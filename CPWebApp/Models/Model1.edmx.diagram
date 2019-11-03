@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="666de3bb25e3466fa22b239b38e8af52" Name="Diagram1">
+        <EntityTypeShape EntityType="CPDatabaseModel.PARTICIPANTES" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.PESSOAS" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.PROJETOS" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.RECURSOS" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.SISTEMAS" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.SOLICITACOES" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.TIPO_PARTICIPANTE" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.TIPO_RECURSO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="CPDatabaseModel.FK_PARTICIPANTES_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_PESSOAS_GESTOR" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_PROJETOS_APROVADOR" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_PROJETOS_RESPONSAVEL" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_RECURSOS_PESSOA" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_SOLICITACOES_APROVADOR" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_SOLICITACOES_SOLICITANTE" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_PROJETOS_SISTEMA" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_PROJETOS_SOLICITACAO" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_RECURSOS_SISTEMA" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_RECURSOS_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="CPDatabaseModel.FK_SOLICITACOES_SISTEMA" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

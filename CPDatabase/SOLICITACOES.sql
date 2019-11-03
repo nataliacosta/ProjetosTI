@@ -1,0 +1,15 @@
+﻿CREATE TABLE [dbo].[SOLICITACOES]
+(
+	[id] INT NOT NULL PRIMARY KEY, 
+    [sistema] INT NOT NULL, 
+    [solicitante] INT NOT NULL, 
+    [aprovador] INT NULL, 
+    [titulo] VARCHAR(50) NOT NULL, 
+    [descricao] NTEXT NULL, 
+    [criado_em] DATE NOT NULL, 
+    [aprovado_em] DATE NULL, 
+    [status] VARCHAR NOT NULL DEFAULT 'E', 
+    CONSTRAINT [FK_SOLICITACOES_SISTEMA] FOREIGN KEY ([sistema]) REFERENCES [SISTEMAS]([id]), 
+    CONSTRAINT [FK_SOLICITACOES_SOLICITANTE] FOREIGN KEY ([solicitante]) REFERENCES [PESSOAS]([id]), 
+    CONSTRAINT [FK_SOLICITACOES_APROVADOR] FOREIGN KEY ([aprovador]) REFERENCES [PESSOAS]([id])
+)

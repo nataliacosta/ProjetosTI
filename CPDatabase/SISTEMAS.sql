@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[SISTEMAS]
+(
+	[id] INT NOT NULL PRIMARY KEY, 
+    [nome] VARCHAR(50) NULL
+)
+
+GO
