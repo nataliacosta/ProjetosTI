@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[RECURSOS]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [pessoa] INT NOT NULL, 
     [sistema] INT NOT NULL, 
     [tipo] INT NOT NULL, 

@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[PROJETOS]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [sistema] INT NOT NULL, 
     [responsavel] INT NOT NULL, 
     [aprovador] INT NULL, 

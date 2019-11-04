@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[SOLICITACOES]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [sistema] INT NOT NULL, 
     [solicitante] INT NOT NULL, 
     [aprovador] INT NULL, 

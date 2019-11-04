@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[TIPO_PARTICIPANTE]
 (
-	[id] INT NOT NULL PRIMARY KEY, 
+	[id] INT NOT NULL PRIMARY KEY IDENTITY, 
     [titulo] VARCHAR(50) NULL, 
     [insere_documentos] BIT NULL DEFAULT 1
 )
