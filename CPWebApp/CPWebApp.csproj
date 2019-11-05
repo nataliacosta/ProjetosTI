@@ -132,6 +132,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PARTICIPANTESController.cs" />
     <Compile Include="Controllers\PESSOASController.cs" />
     <Compile Include="Controllers\PROJETOSController.cs" />
     <Compile Include="Controllers\RECURSOSController.cs" />
@@ -578,6 +579,11 @@
     <Content Include="Views\PROJETOS\Details.cshtml" />
     <Content Include="Views\PROJETOS\Edit.cshtml" />
     <Content Include="Views\PROJETOS\Index.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Create.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Delete.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Details.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Edit.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
