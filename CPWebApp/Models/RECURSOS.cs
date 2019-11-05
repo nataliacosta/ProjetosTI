@@ -11,8 +11,10 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
+    [DisplayName("Recursos")]
     public partial class RECURSOS
     {
         [Display(Name = "ID")]

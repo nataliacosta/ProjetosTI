@@ -11,8 +11,10 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
+    [DisplayName("Tipo de Recurso")]
     public partial class TIPO_RECURSO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

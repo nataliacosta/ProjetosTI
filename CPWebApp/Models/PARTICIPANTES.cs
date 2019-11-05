@@ -11,8 +11,10 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
+    [DisplayName("Participantes")]
     public partial class PARTICIPANTES
     {
         [Display(Name = "Pessoa")]
