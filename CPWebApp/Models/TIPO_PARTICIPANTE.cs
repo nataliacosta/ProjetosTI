@@ -22,8 +22,6 @@ namespace CPWebApp.Models
 
         [Display(Name = "Título")]
         public string titulo { get; set; }
-
-        [Display(Name = "Insere documentos?")]
         public Nullable<bool> insere_documentos { get; set; }
     }
 }

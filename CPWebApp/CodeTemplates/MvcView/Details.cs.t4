@@ -12,7 +12,7 @@ if(IsPartialView) {
 #>
 
 @{
-    ViewBag.Title = "Detalhes - <#= ViewDataTypeShortName#>";
+    ViewBag.Title = "<#= ViewName#>";
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
@@ -22,37 +22,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
 }
 
-<div class="row mt-4 align-items-center">
-    <div class="col-2">
-        <a href="@Url.Action("Index")" class="text-dark"><i class="material-icons" style="font-size: 36px;">arrow_back</i></a>
-    </div>
-    <div class="col-8 text-center">
-        <h2><#= ViewDataTypeShortName#> - Detalhes</h2>
-    </div>
-    <#
-    string pkName = GetPrimaryKeyName();
-    if (pkName != null) {
-    #>
-        <div class="col-2 text-right d-none d-lg-block">
-            @Html.ActionLink("Editar", "Edit", new { id=Model.<#= pkName #> }, new { @class = "btn btn-primary" })
-        </div>
-        <div class="col-2 text-right d-lg-none">
-            <a href="@Url.Action("Edit", new { id=Model.<#= pkName #> })" class="text-primary"><i class="material-icons" style="font-size: 36px;">edit</i></a>
-        </div>
-    <#
-    } else {
-    #>
-        <div class="col-2 text-right d-none d-lg-block">
-            @Html.ActionLink("Editar", "Edit", new { /* id = Model.PrimaryKey */ }, new { @class = "btn btn-primary" })
-        </div>
-        <div class="col-2 text-right d-lg-none">
-            <a href="@Url.Action("Edit", new { /* id = Model.PrimaryKey */ })" class="text-primary"><i class="material-icons" style="font-size: 36px;">edit</i></a>
-        </div>
-    <#
-    }
-    #>
-</div>
-<hr class="mt-1 mb-3" />
+<h2><#= ViewName#></h2>
 
 <#
 } else {
@@ -75,6 +45,8 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 }
 #>
 <div>
+    <h4><#= ViewDataTypeShortName #></h4>
+    <hr />
     <dl class="dl-horizontal">
 <#
 foreach (PropertyMetadata property in ModelMetadata.Properties) {
@@ -92,7 +64,7 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
         </dt>
 
         <dd>
-            @Html.DisplayTextFor(model => model.<#= GetValueExpression(property) #>)
+            @Html.DisplayFor(model => model.<#= GetValueExpression(property) #>)
         </dd>
 
 <#
@@ -101,7 +73,22 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
 #>
     </dl>
 </div>
-
+<p>
+<#
+string pkName = GetPrimaryKeyName();
+if (pkName != null) {
+#>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.<#= pkName #> }) |
+    @Html.ActionLink("Back to List", "Index")
+<#
+} else {
+#>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+<#
+}
+#>
+</p>
 <#
 // The following code closes the tag used in the case of a view using a layout page and the body and html tags in the case of a regular view page
 #>
