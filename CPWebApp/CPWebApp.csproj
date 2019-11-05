@@ -135,6 +135,7 @@
     <Compile Include="Controllers\PESSOASController.cs" />
     <Compile Include="Controllers\RECURSOSController.cs" />
     <Compile Include="Controllers\SISTEMASController.cs" />
+    <Compile Include="Controllers\SOLICITACOESController.cs" />
     <Compile Include="Controllers\TIPO_PARTICIPANTEController.cs" />
     <Compile Include="Controllers\TIPO_RECURSOController.cs" />
     <Compile Include="Global.asax.cs">
@@ -566,6 +567,11 @@
     <Content Include="Views\RECURSOS\Details.cshtml" />
     <Content Include="Views\RECURSOS\Edit.cshtml" />
     <Content Include="Views\RECURSOS\Index.cshtml" />
+    <Content Include="Views\SOLICITACOES\Create.cshtml" />
+    <Content Include="Views\SOLICITACOES\Delete.cshtml" />
+    <Content Include="Views\SOLICITACOES\Details.cshtml" />
+    <Content Include="Views\SOLICITACOES\Edit.cshtml" />
+    <Content Include="Views\SOLICITACOES\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
