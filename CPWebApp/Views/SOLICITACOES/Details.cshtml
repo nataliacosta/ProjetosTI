@@ -1,0 +1,91 @@
+﻿@model CPWebApp.Models.SOLICITACOES
+
+@{
+    ViewBag.Title = "Detalhes - SOLICITACOES";
+}
+
+<div class="row mt-4 align-items-center">
+    <div class="col-2">
+        <a href="@Url.Action("Index")" class="text-dark"><i class="material-icons" style="font-size: 36px;">arrow_back</i></a>
+    </div>
+    <div class="col-8 text-center">
+        <h2>SOLICITACOES - Detalhes</h2>
+    </div>
+            <div class="col-2 text-right d-none d-lg-block">
+            @Html.ActionLink("Editar", "Edit", new { id=Model.id }, new { @class = "btn btn-primary" })
+        </div>
+        <div class="col-2 text-right d-lg-none">
+            <a href="@Url.Action("Edit", new { id=Model.id })" class="text-primary"><i class="material-icons" style="font-size: 36px;">edit</i></a>
+        </div>
+    </div>
+<hr class="mt-1 mb-3" />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.criado_em)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.criado_em)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aprovado_em)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.aprovado_em)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PESSOAS.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.PESSOAS.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PESSOAS1.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.PESSOAS1.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SISTEMAS.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.SISTEMAS.nome)
+        </dd>
+
+    </dl>
+</div>
+
