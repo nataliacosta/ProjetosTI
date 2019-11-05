@@ -11,12 +11,20 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class RECURSOS
     {
+        [Display(Name = "ID")]
         public int id { get; set; }
+
+        [Display(Name = "Pessoa")]
         public int pessoa { get; set; }
+
+        [Display(Name = "Sistema")]
         public int sistema { get; set; }
+
+        [Display(Name = "Tipo de Recurso")]
         public int tipo { get; set; }
     
         public virtual PESSOAS PESSOAS { get; set; }

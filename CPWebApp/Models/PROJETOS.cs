@@ -11,19 +11,41 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PROJETOS
     {
+        [Display(Name = "ID")]
         public int id { get; set; }
+
+        [Display(Name = "Sistema")]
         public int sistema { get; set; }
+
+        [Display(Name = "Responsável")]
         public int responsavel { get; set; }
+
+        [Display(Name = "Aprovado por")]
         public Nullable<int> aprovador { get; set; }
+
+        [Display(Name = "Aprovado em")]
         public Nullable<System.DateTime> aprovado_em { get; set; }
+
+        [Display(Name = "Criado em")]
         public System.DateTime criado_em { get; set; }
+
+        [Display(Name = "Título")]
         public string titulo { get; set; }
+
+        [Display(Name = "Descrição")]
         public string descricao { get; set; }
+
+        [Display(Name = "Solicitação")]
         public Nullable<int> solicitacao { get; set; }
+
+        [Display(Name = "Finalizado em")]
         public Nullable<System.DateTime> finalizado_em { get; set; }
+
+        [Display(Name = "Status")]
         public string status { get; set; }
     
         public virtual PESSOAS PESSOAS { get; set; }

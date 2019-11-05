@@ -11,10 +11,14 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TIPO_PARTICIPANTE
     {
+        [Display(Name = "ID")]
         public int id { get; set; }
+
+        [Display(Name = "Título")]
         public string titulo { get; set; }
         public Nullable<bool> insere_documentos { get; set; }
     }
