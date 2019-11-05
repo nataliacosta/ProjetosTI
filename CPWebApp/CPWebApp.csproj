@@ -132,6 +132,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TIPO_RECURSOController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -536,6 +537,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\TIPO_RECURSO\Create.cshtml" />
+    <Content Include="Views\TIPO_RECURSO\Delete.cshtml" />
+    <Content Include="Views\TIPO_RECURSO\Details.cshtml" />
+    <Content Include="Views\TIPO_RECURSO\Edit.cshtml" />
+    <Content Include="Views\TIPO_RECURSO\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

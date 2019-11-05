@@ -1,0 +1,67 @@
+﻿@model CPWebApp.Models.TIPO_RECURSO
+
+@{
+    ViewBag.Title = "Detalhes - TIPO_RECURSO";
+}
+
+<div class="row mt-4 align-items-center">
+    <div class="col-2">
+        <a href="@Url.Action("Index")" class="text-dark"><i class="material-icons" style="font-size: 36px;">arrow_back</i></a>
+    </div>
+    <div class="col-8 text-center">
+        <h2>TIPO_RECURSO - Detalhes</h2>
+    </div>
+            <div class="col-2 text-right d-none d-lg-block">
+            @Html.ActionLink("Editar", "Edit", new { id=Model.id }, new { @class = "btn btn-primary" })
+        </div>
+        <div class="col-2 text-right d-lg-none">
+            <a href="@Url.Action("Edit", new { id=Model.id })" class="text-primary"><i class="material-icons" style="font-size: 36px;">edit</i></a>
+        </div>
+    </div>
+<hr class="mt-1 mb-3" />
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cria_solicitacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.cria_solicitacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cria_projeto)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.cria_projeto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aprova_solicitacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.aprova_solicitacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aprova_projeto)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.aprova_projeto)
+        </dd>
+
+    </dl>
+</div>
+

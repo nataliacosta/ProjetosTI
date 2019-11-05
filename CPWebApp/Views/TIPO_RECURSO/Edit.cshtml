@@ -1,0 +1,89 @@
+﻿@model CPWebApp.Models.TIPO_RECURSO
+
+@{
+    ViewBag.Title = "Editar - TIPO_RECURSO";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row mt-4 align-items-center">
+        <div class="col-2">
+            <a href="@Url.Action("Index")" class="text-dark"><i class="material-icons" style="font-size: 36px;">arrow_back</i></a>
+        </div>
+        <div class="col-8 text-center">
+            <h2>TIPO_RECURSO - Editar</h2>
+        </div>
+        <div class="col-2 text-right d-none d-lg-block">
+            <button id="submit" type="submit" class="btn btn-primary">Salvar</button>
+        </div>
+        <div class="col-2 text-right d-lg-none">
+            <div onclick="$('#submit').click()" class="text-primary"><i class="material-icons" style="font-size: 36px;">save</i></div>
+        </div>
+    </div>
+    <hr class="mt-1 mb-3" />
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.titulo, htmlAttributes: new { @class = "control-label col-12" })
+            <div class="col-12">
+                @Html.EditorFor(model => model.titulo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.titulo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cria_solicitacao, htmlAttributes: new { @class = "control-label col-12" })
+            <div class="col-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.cria_solicitacao)
+                    @Html.ValidationMessageFor(model => model.cria_solicitacao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cria_projeto, htmlAttributes: new { @class = "control-label col-12" })
+            <div class="col-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.cria_projeto)
+                    @Html.ValidationMessageFor(model => model.cria_projeto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.aprova_solicitacao, htmlAttributes: new { @class = "control-label col-12" })
+            <div class="col-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.aprova_solicitacao)
+                    @Html.ValidationMessageFor(model => model.aprova_solicitacao, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.aprova_projeto, htmlAttributes: new { @class = "control-label col-12" })
+            <div class="col-12">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.aprova_projeto)
+                    @Html.ValidationMessageFor(model => model.aprova_projeto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
