@@ -19,6 +19,22 @@
                 <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
                 <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin Tools
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/PESSOAS">Pessoas</a>
+                        <a class="dropdown-item" href="/SISTEMAS">Sistemas</a>
+                        <a class="dropdown-item" href="/RECURSOS">Recursos</a>
+                        <a class="dropdown-item" href="/SOLICITACOES">Solicitações</a>
+                        <a class="dropdown-item" href="/PROJETOS">Projetos</a>
+                        <a class="dropdown-item" href="/PARTICIPANTES">Participantes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/TIPO_RECURSO">Tipos de Recursos</a>
+                        <a class="dropdown-item" href="/TIPO_PARTICIPANTE">Tipos de Participantes</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
