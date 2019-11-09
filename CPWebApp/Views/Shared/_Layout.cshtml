@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top text-white">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        @Html.ActionLink("Controle de Projetos", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("About", "About", "Home", null, new { @class = "nav-link" })</li>
+                <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Admin Tools
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/PESSOAS">Pessoas</a>
+                        <a class="dropdown-item" href="/SISTEMAS">Sistemas</a>
+                        <a class="dropdown-item" href="/RECURSOS">Recursos</a>
+                        <a class="dropdown-item" href="/SOLICITACOES">Solicitações</a>
+                        <a class="dropdown-item" href="/PROJETOS">Projetos</a>
+                        <a class="dropdown-item" href="/PARTICIPANTES">Participantes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/TIPO_RECURSO">Tipos de Recursos</a>
+                        <a class="dropdown-item" href="/TIPO_PARTICIPANTE">Tipos de Participantes</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/datatable")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

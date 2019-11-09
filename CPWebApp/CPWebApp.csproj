@@ -588,6 +588,8 @@
     <Content Include="Views\TIPO_RECURSO\Details.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Edit.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
