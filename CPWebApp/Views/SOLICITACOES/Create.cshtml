@@ -32,7 +32,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.sistema, "sistema", htmlAttributes: new { @class = "control-label col-12" })
             <div class="col-12">
-                @Html.DropDownList("sistema", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("sistema", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
                 @Html.ValidationMessageFor(model => model.sistema, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.solicitante, "solicitante", htmlAttributes: new { @class = "control-label col-12" })
             <div class="col-12">
-                @Html.DropDownList("solicitante", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("solicitante", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
                 @Html.ValidationMessageFor(model => model.solicitante, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -48,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.aprovador, "aprovador", htmlAttributes: new { @class = "control-label col-12" })
             <div class="col-12">
-                @Html.DropDownList("aprovador", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("aprovador", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
                 @Html.ValidationMessageFor(model => model.aprovador, "", new { @class = "text-danger" })
             </div>
         </div>
