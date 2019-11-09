@@ -21,10 +21,16 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.PESSOAS.nome)
+                    @Html.DisplayNameFor(model => model.id)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.TIPO_PARTICIPANTE.titulo)
+                    @Html.DisplayNameFor(model => model.PESSOAS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PROJETOS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TIPO_PARTICIPANTE)
                 </th>
                 <th></th>
             </tr>
@@ -34,16 +40,21 @@
 @foreach (var item in Model) {
             <tr>
                 <td>
+                    @Html.DisplayTextFor(modelItem => item.id)
+                </td>
+                <td>
                     @Html.DisplayTextFor(modelItem => item.PESSOAS.nome)
+                </td>
+                <td>
+                    @Html.DisplayTextFor(modelItem => item.PROJETOS.titulo)
                 </td>
                 <td>
                     @Html.DisplayTextFor(modelItem => item.TIPO_PARTICIPANTE.titulo)
                 </td>
-              
-                <td class="text-center text-nowrap">
-                    <a href="@Url.Action("Edit", new { /* id=item.PrimaryKey */ })" class="text-primary"><i class="material-icons">edit</i></a>
-                    <a href="@Url.Action("Details", new { /* id=item.PrimaryKey */ })" class="text-primary"><i class="material-icons">info</i></a>
-                    <a href="@Url.Action("Delete", new { /* id=item.PrimaryKey */ })" class="text-danger"><i class="material-icons">delete</i></a>
+                <td class="text-center">
+                    <a href="@Url.Action("Edit", new { id=item.id })" class="text-primary"><i class="material-icons">edit</i></a>
+                    <a href="@Url.Action("Details", new { id=item.id })" class="text-primary"><i class="material-icons">info</i></a>
+                    <a href="@Url.Action("Delete", new { id=item.id })" class="text-danger"><i class="material-icons">delete</i></a>
                 </td>
             </tr>
 }

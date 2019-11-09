@@ -42,7 +42,7 @@ namespace CPWebApp.Controllers
             ViewBag.aprovador = new SelectList(db.PESSOAS, "id", "nome");
             ViewBag.responsavel = new SelectList(db.PESSOAS, "id", "nome");
             ViewBag.sistema = new SelectList(db.SISTEMAS, "id", "nome");
-            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "titulo");
+            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "id");
             return View();
         }
 
@@ -63,7 +63,7 @@ namespace CPWebApp.Controllers
             ViewBag.aprovador = new SelectList(db.PESSOAS, "id", "nome", pROJETOS.aprovador);
             ViewBag.responsavel = new SelectList(db.PESSOAS, "id", "nome", pROJETOS.responsavel);
             ViewBag.sistema = new SelectList(db.SISTEMAS, "id", "nome", pROJETOS.sistema);
-            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "titulo", pROJETOS.solicitacao);
+            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "id", pROJETOS.solicitacao);
             return View(pROJETOS);
         }
 
@@ -82,7 +82,7 @@ namespace CPWebApp.Controllers
             ViewBag.aprovador = new SelectList(db.PESSOAS, "id", "nome", pROJETOS.aprovador);
             ViewBag.responsavel = new SelectList(db.PESSOAS, "id", "nome", pROJETOS.responsavel);
             ViewBag.sistema = new SelectList(db.SISTEMAS, "id", "nome", pROJETOS.sistema);
-            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "titulo", pROJETOS.solicitacao);
+            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "id", pROJETOS.solicitacao);
             return View(pROJETOS);
         }
 
@@ -102,7 +102,7 @@ namespace CPWebApp.Controllers
             ViewBag.aprovador = new SelectList(db.PESSOAS, "id", "nome", pROJETOS.aprovador);
             ViewBag.responsavel = new SelectList(db.PESSOAS, "id", "nome", pROJETOS.responsavel);
             ViewBag.sistema = new SelectList(db.SISTEMAS, "id", "nome", pROJETOS.sistema);
-            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "titulo", pROJETOS.solicitacao);
+            ViewBag.solicitacao = new SelectList(db.SOLICITACOES, "id", "id", pROJETOS.solicitacao);
             return View(pROJETOS);
         }
 

@@ -21,13 +21,16 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.PESSOAS.nome)
+                    @Html.DisplayNameFor(model => model.id)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SISTEMAS.nome)
+                    @Html.DisplayNameFor(model => model.PESSOAS)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.TIPO_RECURSO.titulo)
+                    @Html.DisplayNameFor(model => model.SISTEMAS)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TIPO_RECURSO)
                 </th>
                 <th></th>
             </tr>
@@ -36,6 +39,9 @@
 
 @foreach (var item in Model) {
             <tr>
+                <td>
+                    @Html.DisplayTextFor(modelItem => item.id)
+                </td>
                 <td>
                     @Html.DisplayTextFor(modelItem => item.PESSOAS.nome)
                 </td>

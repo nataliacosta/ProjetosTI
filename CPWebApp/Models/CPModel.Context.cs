@@ -25,7 +25,6 @@ namespace CPWebApp.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<PARTICIPANTES> PARTICIPANTES { get; set; }
         public virtual DbSet<PESSOAS> PESSOAS { get; set; }
         public virtual DbSet<PROJETOS> PROJETOS { get; set; }
         public virtual DbSet<RECURSOS> RECURSOS { get; set; }
@@ -33,5 +32,6 @@ namespace CPWebApp.Models
         public virtual DbSet<SOLICITACOES> SOLICITACOES { get; set; }
         public virtual DbSet<TIPO_PARTICIPANTE> TIPO_PARTICIPANTE { get; set; }
         public virtual DbSet<TIPO_RECURSO> TIPO_RECURSO { get; set; }
+        public virtual DbSet<PARTICIPANTES> PARTICIPANTES { get; set; }
     }
 }

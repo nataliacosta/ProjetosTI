@@ -26,7 +26,7 @@ namespace CPWebApp.Models
         public Nullable<int> aprovador { get; set; }
         public string titulo { get; set; }
         public string descricao { get; set; }
-        public System.DateTime criado_em { get; set; }
+        public Nullable<System.DateTime> criado_em { get; set; }
         public Nullable<System.DateTime> aprovado_em { get; set; }
         public string status { get; set; }
     

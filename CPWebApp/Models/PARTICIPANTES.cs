@@ -17,8 +17,10 @@ namespace CPWebApp.Models
         public int pessoa { get; set; }
         public int projeto { get; set; }
         public int tipo { get; set; }
+        public int id { get; set; }
     
         public virtual PESSOAS PESSOAS { get; set; }
+        public virtual PROJETOS PROJETOS { get; set; }
         public virtual TIPO_PARTICIPANTE TIPO_PARTICIPANTE { get; set; }
     }
 }

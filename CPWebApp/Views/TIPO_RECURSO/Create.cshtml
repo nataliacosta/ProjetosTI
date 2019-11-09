@@ -94,4 +94,13 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: true
+            });
+            $('.bootstrap-select').css("max-width", $(".form-control").outerWidth());
+        });
+    </script>
 }

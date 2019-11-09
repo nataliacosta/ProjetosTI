@@ -120,7 +120,7 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
 <#
         if (property.IsForeignKey) {
 #>
-            @Html.LabelFor(model => model.<#= property.PropertyName #>, "<#= GetAssociationName(property) #>", htmlAttributes: new { @class = "control-label col-12" })
+            @Html.LabelFor(model => model.<#= property.PropertyName #>, htmlAttributes: new { @class = "control-label col-12" })
 <#
         } else {
 #>
@@ -136,7 +136,7 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
 <# 
             if (isControlHtmlAttributesSupported) {
 #>
-                @Html.DropDownList("<#= property.PropertyName #>", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
+                @Html.DropDownList("<#= property.PropertyName #>", null, htmlAttributes: new { @class = "form-control selectpicker" }, optionLabel: "(nenhum)")
 <#
             } else {
 #>
@@ -156,7 +156,7 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
 <#
             } else if (property.IsEnum && !property.IsEnumFlags) {
 #>
-                @Html.EnumDropDownListFor(model => model.<#= property.PropertyName #>, htmlAttributes: new { @class = "form-control" })
+                @Html.EnumDropDownListFor(model => model.<#= property.PropertyName #>, htmlAttributes: new { @class = "form-control selectpicker" })
 <#
             } else {
 #>
@@ -205,6 +205,15 @@ if(IsLayoutPageSelected && ReferenceScriptLibraries && IsBundleConfigPresent) {
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: true
+            });
+            $('.bootstrap-select').css("max-width", $(".form-control").outerWidth());
+        });
+    </script>
 }
 <#
 }

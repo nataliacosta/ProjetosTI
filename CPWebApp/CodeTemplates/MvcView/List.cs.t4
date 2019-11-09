@@ -61,7 +61,8 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 <#
 IEnumerable<PropertyMetadata> properties = ModelMetadata.Properties;
 foreach (PropertyMetadata property in properties) {
-    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+//    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+    if (property.Scaffold && !property.IsForeignKey) {
 #>
 <#
         // We do not want to show any association properties for which there is
@@ -71,7 +72,7 @@ foreach (PropertyMetadata property in properties) {
         }
 #>
                 <th>
-                    @Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)
+                    @Html.DisplayNameFor(model => model.<#= property.PropertyName #>)
                 </th>
 <#
     }
@@ -86,7 +87,8 @@ foreach (PropertyMetadata property in properties) {
             <tr>
 <#
 foreach (PropertyMetadata property in properties) {
-    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+//    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+    if (property.Scaffold && !property.IsForeignKey) {
 #>
 <#
         // We do not want to show any association properties for which there is

@@ -21,6 +21,9 @@
         <thead>
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.id)
+                </th>
+                <th>
                     @Html.DisplayNameFor(model => model.aprovado_em)
                 </th>
                 <th>
@@ -39,16 +42,16 @@
                     @Html.DisplayNameFor(model => model.status)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PESSOAS.nome)
+                    @Html.DisplayNameFor(model => model.PESSOAS)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PESSOAS1.nome)
+                    @Html.DisplayNameFor(model => model.PESSOAS1)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SISTEMAS.nome)
+                    @Html.DisplayNameFor(model => model.SISTEMAS)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.SOLICITACOES.titulo)
+                    @Html.DisplayNameFor(model => model.SOLICITACOES)
                 </th>
                 <th></th>
             </tr>
@@ -57,6 +60,9 @@
 
 @foreach (var item in Model) {
             <tr>
+                <td>
+                    @Html.DisplayTextFor(modelItem => item.id)
+                </td>
                 <td>
                     @Html.DisplayTextFor(modelItem => item.aprovado_em)
                 </td>
@@ -85,7 +91,7 @@
                     @Html.DisplayTextFor(modelItem => item.SISTEMAS.nome)
                 </td>
                 <td>
-                    @Html.DisplayTextFor(modelItem => item.SOLICITACOES.titulo)
+                    @Html.DisplayTextFor(modelItem => item.SOLICITACOES.id)
                 </td>
                 <td class="text-center">
                     <a href="@Url.Action("Edit", new { id=item.id })" class="text-primary"><i class="material-icons">edit</i></a>

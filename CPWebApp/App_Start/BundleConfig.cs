@@ -19,17 +19,24 @@ namespace CPWebApp
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/popper").Include(
+                      "~/Scripts/umd/popper.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/DataTables/css/dataTables.bootstrap4.css",
+                      "~/Content/bootstrap-select.css",
                       "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/bundles/datatable").Include(
                       "~/Scripts/DataTables/jquery.dataTables.js",
                       "~/Scripts/DataTables/dataTables.bootstrap4.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/bootstrap-select").Include(
+                      "~/Scripts/bootstrap-select.js"));
         }
     }
 }

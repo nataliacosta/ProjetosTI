@@ -78,14 +78,15 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
     <dl class="dl-horizontal">
 <#
 foreach (PropertyMetadata property in ModelMetadata.Properties) {
-    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+//    if (property.Scaffold && !property.IsPrimaryKey && !property.IsForeignKey) {
+    if (property.Scaffold && !property.IsAssociation) {
 #>
 <#
         // We do not want to show any association properties for which there is
         // no associated foreign key.
-        if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
-            continue;
-        }
+        //if (property.IsAssociation && GetRelatedModelMetadata(property) == null) {
+            //continue;
+        //}
 #>
         <dt>
             @Html.DisplayNameFor(model => model.<#= GetValueExpression(property) #>)

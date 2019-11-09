@@ -12,29 +12,26 @@ namespace CPWebApp.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
 
-    [DisplayName("Pessoas")]
     public partial class PESSOAS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PESSOAS()
         {
-            this.PARTICIPANTES = new HashSet<PARTICIPANTES>();
             this.PESSOAS1 = new HashSet<PESSOAS>();
             this.PROJETOS = new HashSet<PROJETOS>();
             this.PROJETOS1 = new HashSet<PROJETOS>();
             this.RECURSOS = new HashSet<RECURSOS>();
             this.SOLICITACOES = new HashSet<SOLICITACOES>();
             this.SOLICITACOES1 = new HashSet<SOLICITACOES>();
+            this.PARTICIPANTES = new HashSet<PARTICIPANTES>();
         }
-        
+    
         public int id { get; set; }
         public string nome { get; set; }
         public Nullable<int> gestor { get; set; }
+        public string id_externo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PARTICIPANTES> PARTICIPANTES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PESSOAS> PESSOAS1 { get; set; }
         public virtual PESSOAS PESSOAS2 { get; set; }
@@ -48,5 +45,7 @@ namespace CPWebApp.Models
         public virtual ICollection<SOLICITACOES> SOLICITACOES { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SOLICITACOES> SOLICITACOES1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PARTICIPANTES> PARTICIPANTES { get; set; }
     }
 }

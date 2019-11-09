@@ -32,25 +32,25 @@
         @Html.HiddenFor(model => model.id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.pessoa, "pessoa", htmlAttributes: new { @class = "control-label col-12" })
+            @Html.LabelFor(model => model.pessoa, htmlAttributes: new { @class = "control-label col-12" })
             <div class="col-12">
-                @Html.DropDownList("pessoa", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
+                @Html.DropDownList("pessoa", null, htmlAttributes: new { @class = "form-control selectpicker" }, optionLabel: "(nenhum)")
                 @Html.ValidationMessageFor(model => model.pessoa, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.sistema, "sistema", htmlAttributes: new { @class = "control-label col-12" })
+            @Html.LabelFor(model => model.sistema, htmlAttributes: new { @class = "control-label col-12" })
             <div class="col-12">
-                @Html.DropDownList("sistema", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
+                @Html.DropDownList("sistema", null, htmlAttributes: new { @class = "form-control selectpicker" }, optionLabel: "(nenhum)")
                 @Html.ValidationMessageFor(model => model.sistema, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.tipo, "tipo", htmlAttributes: new { @class = "control-label col-12" })
+            @Html.LabelFor(model => model.tipo, htmlAttributes: new { @class = "control-label col-12" })
             <div class="col-12">
-                @Html.DropDownList("tipo", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
+                @Html.DropDownList("tipo", null, htmlAttributes: new { @class = "form-control selectpicker" }, optionLabel: "(nenhum)")
                 @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -62,4 +62,13 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: true
+            });
+            $('.bootstrap-select').css("max-width", $(".form-control").outerWidth());
+        });
+    </script>
 }

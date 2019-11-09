@@ -14,12 +14,18 @@ namespace CPWebApp.Models
     
     public partial class PROJETOS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public PROJETOS()
+        {
+            this.PARTICIPANTES = new HashSet<PARTICIPANTES>();
+        }
+    
         public int id { get; set; }
         public int sistema { get; set; }
         public int responsavel { get; set; }
         public Nullable<int> aprovador { get; set; }
         public Nullable<System.DateTime> aprovado_em { get; set; }
-        public System.DateTime criado_em { get; set; }
+        public Nullable<System.DateTime> criado_em { get; set; }
         public string titulo { get; set; }
         public string descricao { get; set; }
         public Nullable<int> solicitacao { get; set; }
@@ -30,5 +36,7 @@ namespace CPWebApp.Models
         public virtual PESSOAS PESSOAS1 { get; set; }
         public virtual SISTEMAS SISTEMAS { get; set; }
         public virtual SOLICITACOES SOLICITACOES { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PARTICIPANTES> PARTICIPANTES { get; set; }
     }
 }

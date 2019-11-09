@@ -17,7 +17,7 @@ namespace CPWebApp.Controllers
         // GET: PARTICIPANTES
         public ActionResult Index()
         {
-            var pARTICIPANTES = db.PARTICIPANTES.Include(p => p.PESSOAS).Include(p => p.TIPO_PARTICIPANTE);
+            var pARTICIPANTES = db.PARTICIPANTES.Include(p => p.PESSOAS).Include(p => p.PROJETOS).Include(p => p.TIPO_PARTICIPANTE);
             return View(pARTICIPANTES.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace CPWebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome");
+            ViewBag.projeto = new SelectList(db.PROJETOS, "id", "titulo");
             ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo");
             return View();
         }
@@ -49,7 +50,7 @@ namespace CPWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "pessoa,projeto,tipo")] PARTICIPANTES pARTICIPANTES)
+        public ActionResult Create([Bind(Include = "pessoa,projeto,tipo,id")] PARTICIPANTES pARTICIPANTES)
         {
             if (ModelState.IsValid)
             {
@@ -59,6 +60,7 @@ namespace CPWebApp.Controllers
             }
 
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome", pARTICIPANTES.pessoa);
+            ViewBag.projeto = new SelectList(db.PROJETOS, "id", "titulo", pARTICIPANTES.projeto);
             ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo", pARTICIPANTES.tipo);
             return View(pARTICIPANTES);
         }
@@ -76,6 +78,7 @@ namespace CPWebApp.Controllers
                 return HttpNotFound();
             }
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome", pARTICIPANTES.pessoa);
+            ViewBag.projeto = new SelectList(db.PROJETOS, "id", "titulo", pARTICIPANTES.projeto);
             ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo", pARTICIPANTES.tipo);
             return View(pARTICIPANTES);
         }
@@ -85,7 +88,7 @@ namespace CPWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "pessoa,projeto,tipo")] PARTICIPANTES pARTICIPANTES)
+        public ActionResult Edit([Bind(Include = "pessoa,projeto,tipo,id")] PARTICIPANTES pARTICIPANTES)
         {
             if (ModelState.IsValid)
             {
@@ -94,6 +97,7 @@ namespace CPWebApp.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome", pARTICIPANTES.pessoa);
+            ViewBag.projeto = new SelectList(db.PROJETOS, "id", "titulo", pARTICIPANTES.projeto);
             ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo", pARTICIPANTES.tipo);
             return View(pARTICIPANTES);
         }

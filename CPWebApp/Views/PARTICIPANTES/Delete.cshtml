@@ -28,11 +28,27 @@
 <div>
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.id)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.PESSOAS.nome)
         </dt>
 
         <dd>
             @Html.DisplayTextFor(model => model.PESSOAS.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROJETOS.titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayTextFor(model => model.PROJETOS.titulo)
         </dd>
 
         <dt>

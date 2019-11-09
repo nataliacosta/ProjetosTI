@@ -48,7 +48,7 @@ namespace CPWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nome,gestor")] PESSOAS pESSOAS)
+        public ActionResult Create([Bind(Include = "id,nome,gestor,id_externo")] PESSOAS pESSOAS)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace CPWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nome,gestor")] PESSOAS pESSOAS)
+        public ActionResult Edit([Bind(Include = "id,nome,gestor,id_externo")] PESSOAS pESSOAS)
         {
             if (ModelState.IsValid)
             {
