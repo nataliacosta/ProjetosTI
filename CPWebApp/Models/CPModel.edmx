@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CPDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="PARTICIPANTES">
           <Key>
             <PropertyRef Name="pessoa" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" Nullable="false" />
           <Property Name="nome" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="gestor" Type="int" />
         </EntityType>
@@ -26,7 +26,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="sistema" Type="int" Nullable="false" />
           <Property Name="responsavel" Type="int" Nullable="false" />
           <Property Name="aprovador" Type="int" />
@@ -42,7 +42,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pessoa" Type="int" Nullable="false" />
           <Property Name="sistema" Type="int" Nullable="false" />
           <Property Name="tipo" Type="int" Nullable="false" />
@@ -51,14 +51,14 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nome" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="SOLICITACOES">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="sistema" Type="int" Nullable="false" />
           <Property Name="solicitante" Type="int" Nullable="false" />
           <Property Name="aprovador" Type="int" />
@@ -72,7 +72,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="titulo" Type="varchar" MaxLength="50" />
           <Property Name="insere_documentos" Type="bit" />
         </EntityType>
@@ -80,13 +80,12 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="titulo" Type="varchar" MaxLength="50" />
           <Property Name="cria_solicitacao" Type="bit" />
           <Property Name="cria_projeto" Type="bit" />
           <Property Name="aprova_solicitacao" Type="bit" />
           <Property Name="aprova_projeto" Type="bit" />
-          <Property Name="administrador" Type="bit" />
         </EntityType>
         <Association Name="FK_PARTICIPANTES_PESSOA">
           <End Role="PESSOAS" Type="Self.PESSOAS" Multiplicity="1" />
@@ -97,18 +96,6 @@
             </Principal>
             <Dependent Role="PARTICIPANTES">
               <PropertyRef Name="pessoa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PARTICIPANTES_TIPO">
-          <End Role="TIPO_PARTICIPANTE" Type="Self.TIPO_PARTICIPANTE" Multiplicity="1" />
-          <End Role="PARTICIPANTES" Type="Self.PARTICIPANTES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TIPO_PARTICIPANTE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="PARTICIPANTES">
-              <PropertyRef Name="tipo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -257,10 +244,6 @@
             <End Role="PESSOAS" EntitySet="PESSOAS" />
             <End Role="PARTICIPANTES" EntitySet="PARTICIPANTES" />
           </AssociationSet>
-          <AssociationSet Name="FK_PARTICIPANTES_TIPO" Association="Self.FK_PARTICIPANTES_TIPO">
-            <End Role="TIPO_PARTICIPANTE" EntitySet="TIPO_PARTICIPANTE" />
-            <End Role="PARTICIPANTES" EntitySet="PARTICIPANTES" />
-          </AssociationSet>
           <AssociationSet Name="FK_PESSOAS_GESTOR" Association="Self.FK_PESSOAS_GESTOR">
             <End Role="PESSOAS" EntitySet="PESSOAS" />
             <End Role="PESSOAS1" EntitySet="PESSOAS" />
@@ -306,7 +289,8 @@
             <End Role="SOLICITACOES" EntitySet="SOLICITACOES" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CPDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -319,13 +303,12 @@
           <Property Name="projeto" Type="Int32" Nullable="false" />
           <Property Name="tipo" Type="Int32" Nullable="false" />
           <NavigationProperty Name="PESSOAS" Relationship="Self.FK_PARTICIPANTES_PESSOA" FromRole="PARTICIPANTES" ToRole="PESSOAS" />
-          <NavigationProperty Name="TIPO_PARTICIPANTE" Relationship="Self.FK_PARTICIPANTES_TIPO" FromRole="PARTICIPANTES" ToRole="TIPO_PARTICIPANTE" />
         </EntityType>
         <EntityType Name="PESSOAS">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="gestor" Type="Int32" />
           <NavigationProperty Name="PARTICIPANTES" Relationship="Self.FK_PARTICIPANTES_PESSOA" FromRole="PESSOAS" ToRole="PARTICIPANTES" />
@@ -401,10 +384,9 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="insere_documentos" Type="Boolean" />
-          <NavigationProperty Name="PARTICIPANTES" Relationship="Self.FK_PARTICIPANTES_TIPO" FromRole="TIPO_PARTICIPANTE" ToRole="PARTICIPANTES" />
         </EntityType>
         <EntityType Name="TIPO_RECURSO">
           <Key>
@@ -416,7 +398,6 @@
           <Property Name="cria_projeto" Type="Boolean" />
           <Property Name="aprova_solicitacao" Type="Boolean" />
           <Property Name="aprova_projeto" Type="Boolean" />
-          <Property Name="administrador" Type="Boolean" />
           <NavigationProperty Name="RECURSOS" Relationship="Self.FK_RECURSOS_TIPO" FromRole="TIPO_RECURSO" ToRole="RECURSOS" />
         </EntityType>
         <Association Name="FK_PARTICIPANTES_PESSOA">
@@ -428,18 +409,6 @@
             </Principal>
             <Dependent Role="PARTICIPANTES">
               <PropertyRef Name="pessoa" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PARTICIPANTES_TIPO">
-          <End Role="TIPO_PARTICIPANTE" Type="Self.TIPO_PARTICIPANTE" Multiplicity="1" />
-          <End Role="PARTICIPANTES" Type="Self.PARTICIPANTES" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TIPO_PARTICIPANTE">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="PARTICIPANTES">
-              <PropertyRef Name="tipo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -588,10 +557,6 @@
             <End Role="PESSOAS" EntitySet="PESSOAS" />
             <End Role="PARTICIPANTES" EntitySet="PARTICIPANTES" />
           </AssociationSet>
-          <AssociationSet Name="FK_PARTICIPANTES_TIPO" Association="Self.FK_PARTICIPANTES_TIPO">
-            <End Role="TIPO_PARTICIPANTE" EntitySet="TIPO_PARTICIPANTE" />
-            <End Role="PARTICIPANTES" EntitySet="PARTICIPANTES" />
-          </AssociationSet>
           <AssociationSet Name="FK_PESSOAS_GESTOR" Association="Self.FK_PESSOAS_GESTOR">
             <End Role="PESSOAS" EntitySet="PESSOAS" />
             <End Role="PESSOAS1" EntitySet="PESSOAS" />
@@ -729,7 +694,6 @@
                 <ScalarProperty Name="cria_projeto" ColumnName="cria_projeto" />
                 <ScalarProperty Name="aprova_solicitacao" ColumnName="aprova_solicitacao" />
                 <ScalarProperty Name="aprova_projeto" ColumnName="aprova_projeto" />
-                <ScalarProperty Name="administrador" ColumnName="administrador" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

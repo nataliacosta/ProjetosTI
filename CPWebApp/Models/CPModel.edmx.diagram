@@ -4,17 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1dc783a60e5b4a74824ccaea2bd5a22b" Name="Diagram1">
+      <Diagram DiagramId="8d3f3d7b1d304bfd9d0535474e4dfaad" Name="Diagram1">
         <EntityTypeShape EntityType="CPDatabaseModel.PARTICIPANTES" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CPDatabaseModel.PESSOAS" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CPDatabaseModel.PROJETOS" Width="1.5" PointX="6" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CPDatabaseModel.RECURSOS" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.PESSOAS" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.PROJETOS" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.RECURSOS" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="CPDatabaseModel.SISTEMAS" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="CPDatabaseModel.SOLICITACOES" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CPDatabaseModel.TIPO_PARTICIPANTE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CPDatabaseModel.TIPO_RECURSO" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.SOLICITACOES" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.TIPO_PARTICIPANTE" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CPDatabaseModel.TIPO_RECURSO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="CPDatabaseModel.FK_PARTICIPANTES_PESSOA" ManuallyRouted="false" />
-        <AssociationConnector Association="CPDatabaseModel.FK_PARTICIPANTES_TIPO" ManuallyRouted="false" />
         <AssociationConnector Association="CPDatabaseModel.FK_PESSOAS_GESTOR" ManuallyRouted="false" />
         <AssociationConnector Association="CPDatabaseModel.FK_PROJETOS_APROVADOR" ManuallyRouted="false" />
         <AssociationConnector Association="CPDatabaseModel.FK_PROJETOS_RESPONSAVEL" ManuallyRouted="false" />

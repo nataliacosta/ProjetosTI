@@ -158,8 +158,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CPModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Metadata.cs" />
-    <Compile Include="Models\PartialClasses.cs" />
     <Compile Include="Models\PARTICIPANTES.cs">
       <DependentUpon>CPModel.tt</DependentUpon>
     </Compile>
@@ -187,10 +185,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CPDatabase.mdf" />
-    <Content Include="App_Data\CPDatabase_log.ldf">
-      <DependentUpon>CPDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -465,6 +459,13 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <EntityDeploy Include="Models\CPModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CPModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CPModel.edmx.diagram">
+      <DependentUpon>CPModel.edmx</DependentUpon>
+    </Content>
     <Content Include="CodeTemplates\MvcArea\Area.cs.t4" />
     <Content Include="CodeTemplates\MvcArea\Area.vb.t4" />
     <Content Include="CodeTemplates\MvcArea\web.cs.t4" />
@@ -499,13 +500,6 @@
     <Content Include="Content\DataTables\css\semanticui.scss" />
     <Content Include="Content\DataTables\css\mixins.scss" />
     <Content Include="Content\DataTables\css\common.scss" />
-    <EntityDeploy Include="Models\CPModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CPModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\CPModel.edmx.diagram">
-      <DependentUpon>CPModel.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -536,6 +530,8 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -548,48 +544,50 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\PARTICIPANTES\Create.cshtml" />
-    <Content Include="Views\PARTICIPANTES\Delete.cshtml" />
-    <Content Include="Views\PARTICIPANTES\Details.cshtml" />
-    <Content Include="Views\PARTICIPANTES\Edit.cshtml" />
-    <Content Include="Views\PARTICIPANTES\Index.cshtml" />
-    <Content Include="Views\PESSOAS\Create.cshtml" />
-    <Content Include="Views\PESSOAS\Delete.cshtml" />
-    <Content Include="Views\PESSOAS\Details.cshtml" />
-    <Content Include="Views\PESSOAS\Edit.cshtml" />
-    <Content Include="Views\PESSOAS\Index.cshtml" />
-    <Content Include="Views\PROJETOS\Create.cshtml" />
-    <Content Include="Views\PROJETOS\Delete.cshtml" />
-    <Content Include="Views\PROJETOS\Details.cshtml" />
-    <Content Include="Views\PROJETOS\Edit.cshtml" />
-    <Content Include="Views\PROJETOS\Index.cshtml" />
-    <Content Include="Views\RECURSOS\Create.cshtml" />
-    <Content Include="Views\RECURSOS\Delete.cshtml" />
-    <Content Include="Views\RECURSOS\Details.cshtml" />
-    <Content Include="Views\RECURSOS\Edit.cshtml" />
-    <Content Include="Views\RECURSOS\Index.cshtml" />
-    <Content Include="Views\SISTEMAS\Create.cshtml" />
-    <Content Include="Views\SISTEMAS\Delete.cshtml" />
-    <Content Include="Views\SISTEMAS\Details.cshtml" />
-    <Content Include="Views\SISTEMAS\Edit.cshtml" />
-    <Content Include="Views\SISTEMAS\Index.cshtml" />
-    <Content Include="Views\SOLICITACOES\Create.cshtml" />
-    <Content Include="Views\SOLICITACOES\Delete.cshtml" />
-    <Content Include="Views\SOLICITACOES\Details.cshtml" />
-    <Content Include="Views\SOLICITACOES\Edit.cshtml" />
-    <Content Include="Views\SOLICITACOES\Index.cshtml" />
-    <Content Include="Views\TIPO_PARTICIPANTE\Create.cshtml" />
-    <Content Include="Views\TIPO_PARTICIPANTE\Delete.cshtml" />
-    <Content Include="Views\TIPO_PARTICIPANTE\Details.cshtml" />
-    <Content Include="Views\TIPO_PARTICIPANTE\Edit.cshtml" />
-    <Content Include="Views\TIPO_PARTICIPANTE\Index.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Create.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Delete.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Details.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Edit.cshtml" />
     <Content Include="Views\TIPO_RECURSO\Index.cshtml" />
+    <Content Include="Views\TIPO_PARTICIPANTE\Create.cshtml" />
+    <Content Include="Views\TIPO_PARTICIPANTE\Delete.cshtml" />
+    <Content Include="Views\TIPO_PARTICIPANTE\Details.cshtml" />
+    <Content Include="Views\TIPO_PARTICIPANTE\Edit.cshtml" />
+    <Content Include="Views\TIPO_PARTICIPANTE\Index.cshtml" />
+    <Content Include="Views\PESSOAS\Create.cshtml" />
+    <Content Include="Views\PESSOAS\Delete.cshtml" />
+    <Content Include="Views\PESSOAS\Details.cshtml" />
+    <Content Include="Views\PESSOAS\Edit.cshtml" />
+    <Content Include="Views\PESSOAS\Index.cshtml" />
+    <Content Include="Views\SISTEMAS\Create.cshtml" />
+    <Content Include="Views\SISTEMAS\Delete.cshtml" />
+    <Content Include="Views\SISTEMAS\Details.cshtml" />
+    <Content Include="Views\SISTEMAS\Edit.cshtml" />
+    <Content Include="Views\SISTEMAS\Index.cshtml" />
+    <Content Include="Views\RECURSOS\Create.cshtml" />
+    <Content Include="Views\RECURSOS\Delete.cshtml" />
+    <Content Include="Views\RECURSOS\Details.cshtml" />
+    <Content Include="Views\RECURSOS\Edit.cshtml" />
+    <Content Include="Views\RECURSOS\Index.cshtml" />
+    <Content Include="Views\SOLICITACOES\Create.cshtml" />
+    <Content Include="Views\SOLICITACOES\Delete.cshtml" />
+    <Content Include="Views\SOLICITACOES\Details.cshtml" />
+    <Content Include="Views\SOLICITACOES\Edit.cshtml" />
+    <Content Include="Views\SOLICITACOES\Index.cshtml" />
+    <Content Include="Views\PROJETOS\Create.cshtml" />
+    <Content Include="Views\PROJETOS\Delete.cshtml" />
+    <Content Include="Views\PROJETOS\Details.cshtml" />
+    <Content Include="Views\PROJETOS\Edit.cshtml" />
+    <Content Include="Views\PROJETOS\Index.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Create.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Delete.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Details.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Edit.cshtml" />
+    <Content Include="Views\PARTICIPANTES\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

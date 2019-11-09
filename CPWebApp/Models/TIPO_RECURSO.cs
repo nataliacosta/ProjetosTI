@@ -11,7 +11,10 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
+    [DisplayName("Tipo de Recurso")]
     public partial class TIPO_RECURSO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +22,24 @@ namespace CPWebApp.Models
         {
             this.RECURSOS = new HashSet<RECURSOS>();
         }
-    
+
+        [Display(Name = "ID")]
         public int id { get; set; }
+
+        [Display(Name = "Título")]
         public string titulo { get; set; }
+
+        [Display(Name = "Cria solicitação?")]
         public Nullable<bool> cria_solicitacao { get; set; }
+
+        [Display(Name = "Cria projeto?")]
         public Nullable<bool> cria_projeto { get; set; }
+
+        [Display(Name = "Aprova solicitação?")]
         public Nullable<bool> aprova_solicitacao { get; set; }
+
+        [Display(Name = "Aprova projeto?")]
         public Nullable<bool> aprova_projeto { get; set; }
-        public Nullable<bool> administrador { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RECURSOS> RECURSOS { get; set; }
