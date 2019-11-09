@@ -17,7 +17,7 @@ namespace CPWebApp.Controllers
         // GET: PARTICIPANTES
         public ActionResult Index()
         {
-            var pARTICIPANTES = db.PARTICIPANTES.Include(p => p.PESSOAS);
+            var pARTICIPANTES = db.PARTICIPANTES.Include(p => p.PESSOAS).Include(p => p.TIPO_PARTICIPANTE);
             return View(pARTICIPANTES.ToList());
         }
 
@@ -40,6 +40,7 @@ namespace CPWebApp.Controllers
         public ActionResult Create()
         {
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome");
+            ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo");
             return View();
         }
 
@@ -58,6 +59,7 @@ namespace CPWebApp.Controllers
             }
 
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome", pARTICIPANTES.pessoa);
+            ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo", pARTICIPANTES.tipo);
             return View(pARTICIPANTES);
         }
 
@@ -74,6 +76,7 @@ namespace CPWebApp.Controllers
                 return HttpNotFound();
             }
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome", pARTICIPANTES.pessoa);
+            ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo", pARTICIPANTES.tipo);
             return View(pARTICIPANTES);
         }
 
@@ -91,6 +94,7 @@ namespace CPWebApp.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.pessoa = new SelectList(db.PESSOAS, "id", "nome", pARTICIPANTES.pessoa);
+            ViewBag.tipo = new SelectList(db.TIPO_PARTICIPANTE, "id", "titulo", pARTICIPANTES.tipo);
             return View(pARTICIPANTES);
         }
 

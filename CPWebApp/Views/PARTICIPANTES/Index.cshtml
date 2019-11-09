@@ -21,10 +21,10 @@
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.tipo)
+                    @Html.DisplayNameFor(model => model.PESSOAS.nome)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.PESSOAS.nome)
+                    @Html.DisplayNameFor(model => model.TIPO_PARTICIPANTE.titulo)
                 </th>
                 <th></th>
             </tr>
@@ -34,10 +34,10 @@
 @foreach (var item in Model) {
             <tr>
                 <td>
-                    @Html.DisplayTextFor(modelItem => item.tipo)
+                    @Html.DisplayTextFor(modelItem => item.PESSOAS.nome)
                 </td>
                 <td>
-                    @Html.DisplayTextFor(modelItem => item.PESSOAS.nome)
+                    @Html.DisplayTextFor(modelItem => item.TIPO_PARTICIPANTE.titulo)
                 </td>
               
                 <td class="text-center text-nowrap">

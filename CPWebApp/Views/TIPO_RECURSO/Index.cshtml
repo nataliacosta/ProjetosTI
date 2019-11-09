@@ -35,6 +35,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.aprova_projeto)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.administrador)
+                </th>
                 <th></th>
             </tr>
         </thead>
@@ -56,6 +59,9 @@
                 </td>
                 <td>
                     @Html.DisplayTextFor(modelItem => item.aprova_projeto)
+                </td>
+                <td>
+                    @Html.DisplayTextFor(modelItem => item.administrador)
                 </td>
                 <td class="text-center">
                     <a href="@Url.Action("Edit", new { id=item.id })" class="text-primary"><i class="material-icons">edit</i></a>

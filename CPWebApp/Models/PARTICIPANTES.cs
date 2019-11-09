@@ -11,21 +11,14 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
-    [DisplayName("Participantes")]
+    
     public partial class PARTICIPANTES
     {
-        [Display(Name = "Pessoa")]
         public int pessoa { get; set; }
-
-        [Display(Name = "Projeto")]
         public int projeto { get; set; }
-
-        [Display(Name = "Tipo de participante")]
         public int tipo { get; set; }
     
         public virtual PESSOAS PESSOAS { get; set; }
+        public virtual TIPO_PARTICIPANTE TIPO_PARTICIPANTE { get; set; }
     }
 }

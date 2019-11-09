@@ -11,19 +11,20 @@ namespace CPWebApp.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
-    [DisplayName("Tipo de Participante")]
+    
     public partial class TIPO_PARTICIPANTE
     {
-        [Display(Name = "ID")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TIPO_PARTICIPANTE()
+        {
+            this.PARTICIPANTES = new HashSet<PARTICIPANTES>();
+        }
+    
         public int id { get; set; }
-
-        [Display(Name = "Título")]
         public string titulo { get; set; }
-
-        [Display(Name = "Insere documentos?")]
         public Nullable<bool> insere_documentos { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PARTICIPANTES> PARTICIPANTES { get; set; }
     }
 }

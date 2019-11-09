@@ -46,7 +46,7 @@ namespace CPWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,titulo,cria_solicitacao,cria_projeto,aprova_solicitacao,aprova_projeto")] TIPO_RECURSO tIPO_RECURSO)
+        public ActionResult Create([Bind(Include = "id,titulo,cria_solicitacao,cria_projeto,aprova_solicitacao,aprova_projeto,administrador")] TIPO_RECURSO tIPO_RECURSO)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace CPWebApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,titulo,cria_solicitacao,cria_projeto,aprova_solicitacao,aprova_projeto")] TIPO_RECURSO tIPO_RECURSO)
+        public ActionResult Edit([Bind(Include = "id,titulo,cria_solicitacao,cria_projeto,aprova_solicitacao,aprova_projeto,administrador")] TIPO_RECURSO tIPO_RECURSO)
         {
             if (ModelState.IsValid)
             {

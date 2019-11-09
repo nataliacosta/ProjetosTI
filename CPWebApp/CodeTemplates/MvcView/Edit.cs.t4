@@ -136,7 +136,7 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
 <# 
             if (isControlHtmlAttributesSupported) {
 #>
-                @Html.DropDownList("<#= property.PropertyName #>", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("<#= property.PropertyName #>", null, htmlAttributes: new { @class = "form-control" }, optionLabel: "(nenhum)")
 <#
             } else {
 #>
