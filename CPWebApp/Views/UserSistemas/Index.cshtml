@@ -1,0 +1,114 @@
+﻿@model IEnumerable<CPWebApp.Models.SISTEMAS>
+
+@{
+    ViewBag.Title = "SISTEMAS";
+}
+<div class="row mt-4 mb-4 align-items-center">
+    <div class="col-10">
+        <h2>SISTEMAS</h2>
+    </div>
+    <div class="col-2 text-sm-right d-none d-lg-block">
+        @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-success" })
+    </div>
+    <div class="col-2 text-sm-right d-lg-none">
+        <a href="@Url.Action("Create")" class="text-success"><i class="material-icons" style="font-size: 36px;">add</i></a>
+    </div>
+</div>
+
+<div class="tab-slider--nav">
+    <ul class="tab-slider--tabs">
+        <li class="tab-slider--trigger active" rel="tab1">Meus Sistemas</li>
+        <li class="tab-slider--trigger" rel="tab2">Todos os Sistemas</li>
+    </ul>
+</div>
+<div class="tab-slider--container">
+    <div id="tab1" class="tab-slider--body">
+        @foreach (var item in Model)
+        {
+            <a class="row rowList text-decoration-none" href="@Url.Action("Details", new { id=item.id })">
+                <div class="col-6">
+                    <div class="listitem"> @Html.DisplayTextFor(modelItem => item.nome) </div>
+                    <div class="subtitle"> Sistema </div>
+                </div>
+                <div class="col-2 d-none d-md-block">
+                    <div class="listitem">
+                        @item.RECURSOS.Count
+                    </div>  
+                    <div class="subtitle"> Recursos </div>
+                </div>
+                <div class="col-2 d-none d-md-block">
+                    <div class="listitem">
+                        @item.SOLICITACOES.Count
+                    </div>  
+                    <div class="subtitle"> Solicitações </div>
+                </div>
+                <div class="col-2 d-none d-md-block">
+                    <div class="listitem">
+                        @item.PROJETOS.Count
+                    </div>  
+                    <div class="subtitle"> Projetos </div>
+                </div>
+            </a>
+        }
+        <div class="row rowList"></div>
+    </div>
+    <div id="tab2" class="tab-slider--body">
+        @foreach (var item in Model)
+        {
+            <div class="row rowList">
+                <div class="col-6">
+                    <div class="listitem"> @Html.DisplayTextFor(modelItem => item.nome) </div>
+                    <div class="subtitle"> Sistema </div>
+                </div>
+                <div class="col-2">
+                    <div class="listitem">
+                        @item.RECURSOS.Count
+                    </div>  
+                    <div class="subtitle"> Recursos </div>
+                </div>
+                <div class="col-2">
+                    <div class="listitem">
+                        @item.SOLICITACOES.Count
+                    </div>  
+                    <div class="subtitle"> Solicitações </div>
+                </div>
+                <div class="col-2">
+                    <div class="listitem">
+                        @item.PROJETOS.Count
+                    </div>  
+                    <div class="subtitle"> Projetos </div>
+                </div>
+            </div>
+        }
+        <div class="row rowList"></div>
+    </div>
+</div>
+
+
+@section scripts {
+
+    <script type="text/javascript">
+
+        $("document").ready(function () {
+            $(".tab-slider--body").hide();
+            $(".tab-slider--body:first").show();
+        });
+
+        $(".tab-slider--nav li").click(function () {
+            $(".tab-slider--body").hide();
+            var activeTab = $(this).attr("rel");
+            $("#" + activeTab).fadeIn();
+            if ($(this).attr("rel") == "tab2") {
+                $('.tab-slider--tabs').addClass('slide');
+            } else {
+                $('.tab-slider--tabs').removeClass('slide');
+            }
+            $(".tab-slider--nav li").removeClass("active");
+            $(this).addClass("active");
+        });
+
+
+    </script>
+
+}
+

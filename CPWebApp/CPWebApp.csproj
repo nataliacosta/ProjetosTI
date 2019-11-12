@@ -140,6 +140,7 @@
     <Compile Include="Controllers\SOLICITACOESController.cs" />
     <Compile Include="Controllers\TIPO_PARTICIPANTEController.cs" />
     <Compile Include="Controllers\TIPO_RECURSOController.cs" />
+    <Compile Include="Controllers\UserSistemasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -711,6 +712,11 @@
     <Content Include="Views\TIPO_RECURSO\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\UserSistemas\Create.cshtml" />
+    <Content Include="Views\UserSistemas\Delete.cshtml" />
+    <Content Include="Views\UserSistemas\Details.cshtml" />
+    <Content Include="Views\UserSistemas\Edit.cshtml" />
+    <Content Include="Views\UserSistemas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

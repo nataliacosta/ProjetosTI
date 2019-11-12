@@ -29,7 +29,7 @@ namespace CPWebApp
                       "~/Content/bootstrap.css",
                       "~/Content/DataTables/css/dataTables.bootstrap4.css",
                       "~/Content/bootstrap-select.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
 
             bundles.Add(new StyleBundle("~/bundles/datatable").Include(
                       "~/Scripts/DataTables/jquery.dataTables.js",
