@@ -26,27 +26,26 @@
         @foreach (var item in Model)
         {
             <a class="row rowList text-decoration-none" href="@Url.Action("Details", new { id=item.id })">
-                <div class="col-6">
+                <div class="col-6 d-flex align-items-center">
                     <div class="listitem"> @Html.DisplayTextFor(modelItem => item.nome) </div>
-                    <div class="subtitle"> Sistema </div>
                 </div>
                 <div class="col-2 d-none d-md-block">
                     <div class="listitem">
                         @item.RECURSOS.Count
                     </div>  
-                    <div class="subtitle"> Recursos </div>
+                    <div class="subtitle text-primary"> Recursos </div>
                 </div>
                 <div class="col-2 d-none d-md-block">
                     <div class="listitem">
                         @item.SOLICITACOES.Count
                     </div>  
-                    <div class="subtitle"> Solicitações </div>
+                    <div class="subtitle text-primary"> Solicitações </div>
                 </div>
                 <div class="col-2 d-none d-md-block">
                     <div class="listitem">
                         @item.PROJETOS.Count
                     </div>  
-                    <div class="subtitle"> Projetos </div>
+                    <div class="subtitle text-primary"> Projetos </div>
                 </div>
             </a>
         }
@@ -56,27 +55,26 @@
         @foreach (var item in Model)
         {
             <div class="row rowList">
-                <div class="col-6">
+                <div class="col-6 d-flex align-items-center">
                     <div class="listitem"> @Html.DisplayTextFor(modelItem => item.nome) </div>
-                    <div class="subtitle"> Sistema </div>
                 </div>
                 <div class="col-2">
                     <div class="listitem">
                         @item.RECURSOS.Count
                     </div>  
-                    <div class="subtitle"> Recursos </div>
+                    <div class="subtitle text-primary"> Recursos </div>
                 </div>
                 <div class="col-2">
                     <div class="listitem">
                         @item.SOLICITACOES.Count
                     </div>  
-                    <div class="subtitle"> Solicitações </div>
+                    <div class="subtitle text-primary"> Solicitações </div>
                 </div>
                 <div class="col-2">
                     <div class="listitem">
                         @item.PROJETOS.Count
                     </div>  
-                    <div class="subtitle"> Projetos </div>
+                    <div class="subtitle text-primary"> Projetos </div>
                 </div>
             </div>
         }

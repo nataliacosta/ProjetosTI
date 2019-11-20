@@ -99,9 +99,18 @@ textarea {
 
 .subtitle {
     text-transform: uppercase;
-    font-size:9pt;
-    font-weight: 900;
-    color: midnightblue;
+    font-size: 9pt;
+    font-weight: 600;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.smallsubtitle {
+    text-transform: uppercase;
+    font-size: 8pt;
+    font-weight: 600;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .listitem {
@@ -110,9 +119,80 @@ textarea {
     color: black;
 }
 
+.smalllistitem {
+    font-size: 12pt;
+    color: black;
+}
+
+.badge-small {
+    font-size: 9pt;
+    font-weight: 700;
+}
+
 .card-recurso {
-    border: 1px solid midnightblue;
+    border: 1px solid #0D2149;
     padding: 10px;
-    text-align:center;
-    height:100%;
+    text-align: center;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.bg-primary {
+    background-color: #3581B8 !important;
+}
+
+.bg-secondary {
+    background-color: #0D2149 !important;
+}
+
+.bg-light1 {
+    background-color: #ABA9C3 !important;
+}
+
+.bg-light2 {
+    background-color: #CED3DC !important;
+}
+
+.bg-light3 {
+    background-color: #FCF7F8 !important;
+}
+
+.text-primary {
+    color: #3581B8 !important;
+}
+
+.text-secondary {
+    color: #0D2149 !important;
+}
+
+.text-light1 {
+    color: #ABA9C3 !important;
+}
+
+.text-light2 {
+    color: #CED3DC !important;
+}
+
+.text-light3 {
+    color: #FCF7F8 !important;
+}
+
+.btn-primary {
+    background-color: #3581B8 !important;
+}
+
+.btn-secondary {
+    background-color: #0D2149 !important;
+}
+
+.btn-light1 {
+    background-color: #ABA9C3 !important;
+}
+
+.btn-light2 {
+    background-color: #CED3DC !important;
+}
+
+.btn-light3 {
+    background-color: #FCF7F8 !important;
 }

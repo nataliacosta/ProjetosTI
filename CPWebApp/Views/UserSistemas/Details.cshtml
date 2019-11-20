@@ -9,7 +9,7 @@
         <a href="@Url.Action("Index")" class="text-dark"><i class="material-icons" style="font-size: 36px;">arrow_back</i></a>
     </div>
     <div class="col-8 text-center">
-        <h2>SISTEMAS - Detalhes</h2>
+        <h2>@Html.DisplayTextFor(model => model.nome) - Detalhes</h2>
     </div>
             <div class="col-2 text-right d-none d-lg-block">
             @Html.ActionLink("Editar", "Edit", new { id=Model.id }, new { @class = "btn btn-primary" })
@@ -21,37 +21,139 @@
 <hr class="mt-1 mb-3" />
 
 <div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.id)
-        </dt>
-
-        <dd>
-            @Html.DisplayTextFor(model => model.id)
-        </dd>
-
-        <dt>
+    <div class="row mb-3">
+        <div class="col-12 font-weight-bold">
             @Html.DisplayNameFor(model => model.nome)
-        </dt>
-
-        <dd>
+        </div>
+        <div class="col-12">
             @Html.DisplayTextFor(model => model.nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RECURSOS)
-        </dt>
-    </dl>
-    <div class="row align-items-stretch">
-        @foreach (var recurso in Model.RECURSOS)
-        {
-            <div class="col-2">
-                <div class="card-recurso">
-                    <div>@Html.DisplayTextFor(model => recurso.PESSOAS.nome)</div>
-                    <div class="subtitle">@Html.DisplayTextFor(model => recurso.TIPO_RECURSO.titulo)</div>
-                </div>
+        </div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="col-12 col-md-6 row mb-3">
+            <div class="col-12 font-weight-bold">
+                Recursos
             </div>
-        }
+            <div class="col-12 mt-2">
+                @foreach (var recurso in Model.RECURSOS.GroupBy(x => x.pessoa).ToList())
+                {
+                    <a class="row border-bottom p-2 text-decoration-none text-secondary" href="">
+                        <div class="col-12">
+                            <div class="smalllistitem">
+                                @recurso.ToList()[0].PESSOAS.nome
+                            </div>
+                            <div class="">
+                                @foreach (var tipo in recurso.ToList())
+                                {
+                                    <div class="badge badge-small text-light3 bg-primary">
+                                        @tipo.TIPO_RECURSO.titulo
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between align-items-start">
+        <div class="col-12 col-md-6 row mb-3">
+            <div class="col-12 font-weight-bold">
+                Solicitações em aberto
+            </div>
+            <div class="col-12 mt-2">
+                @foreach (var item in Model.SOLICITACOES)
+                {
+                    if (item.status != "P" && item.status != "R")
+                    {
+                        <a class="row border-bottom p-2 text-decoration-none text-secondary" href="">
+                            <div class="col-6">
+                                <div class="smalllistitem d-flex align-items-center">
+                                    @item.titulo
+                                </div>
+                                @if (item.status == "I")
+                                {
+                                    <div class="badge badge-small badge-light bg-warning">
+                                        Aguardando aprovação
+                                    </div>
+
+                                }
+                                @if (item.status == "A")
+                                {
+                                    <div class="badge badge-small badge-dark bg-secondary">
+                                        Aguardando criação de projeto
+                                    </div>
+
+                                }
+                            </div>
+                            <div class="col-6 d-flex align-items-end justify-content-end">
+                                <div class="text-right">
+                                    <div class="smalllistitem">
+                                        @item.PESSOAS1.nome
+                                    </div>
+                                    <div class="smallsubtitle text-primary"> Solicitante </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="d-none d-md-block mb-3 border-right align-self-stretch"></div>
+        <div class="col-12 col-md-6 row mb-3">
+            <div class="col-12 font-weight-bold">
+                Projetos em aberto
+            </div>
+            <div class="col-12 mt-2">
+                @foreach (var item in Model.PROJETOS)
+                {
+                    if (item.status != "E" && item.status != "R")
+                    {
+                        <a class="row border-bottom p-2 text-decoration-none text-secondary" href="">
+                            <div class="col-6">
+                                <div class="smalllistitem d-flex align-items-center">
+                                    @item.titulo
+                                </div>
+                                @if (item.status == "C")
+                                {
+                                    <div class="badge badge-small badge-light bg-warning">
+                                        Aguardando aprovação
+                                    </div>
+
+                                }
+                                @if (item.status == "A")
+                                {
+                                    <div class="badge badge-small badge-light bg-warning">
+                                        Aguardando iniciação
+                                    </div>
+                                }
+                                @if (item.status == "I")
+                                {
+                                    <div class="badge badge-small badge-dark bg-primary">
+                                        Iniciado
+                                    </div>
+                                }
+                                @if (item.status == "F")
+                                {
+                                    <div class="badge badge-small badge-dark bg-success">
+                                        Finalizado
+                                    </div>
+                                }
+                            </div>
+                            <div class="col-6 d-flex align-items-end justify-content-end">
+                                <div class="text-right">
+                                    <div class="smalllistitem">
+                                        @item.PESSOAS1.nome
+                                    </div>
+                                    <div class="smallsubtitle text-primary"> Responsável </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
     </div>
 </div>
 
